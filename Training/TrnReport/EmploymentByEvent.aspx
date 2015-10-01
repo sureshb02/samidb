@@ -84,7 +84,7 @@
                                 runat="server" />
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="Salary" HeaderText="Salary" />
+                    <asp:BoundField DataField="Currency" HeaderText="Salary" />
                     <asp:BoundField DataField="EmploymentStatus" HeaderText="Status" />
 
                 </Columns>
