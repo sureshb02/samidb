@@ -1,6 +1,7 @@
-﻿<%@ Page Title="Edit | Shelter With Problems" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="SaMI.Web.FLAC.ShelterWithProblems.Edit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="SaMI.Web.FLAC.ShelterWithoutProblems.Edit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
+
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server">
@@ -10,9 +11,6 @@
             <div class="row">
                 <asp:UpdatePanel ID="UpdatePanelAdd" runat="server">
                 <ContentTemplate>
-
-                
-               
 
                 <h3>Detail about victim</h3>
                 <table id="personalDetails"width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
@@ -142,22 +140,21 @@
                             <asp:DropDownList ID="ddlMaritalStatus" runat="server" CssClass="form-control input-sm">
                             </asp:DropDownList>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Family Genogram</label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtFamilyGenogram"  CssClass="form-control input-sm" runat="server" TextMode="MultiLine"></asp:TextBox>
-                        </td>
-                    </tr>
-                    
+                    </tr>                    
                     <tr>
                         <td>
                             <label>Economy status of family</label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtFamilyEconomyStatus"  CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Reason for staying at the shelter</label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtShelterStayReason"  CssClass="form-control input-sm" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -167,35 +164,10 @@
                 </asp:UpdatePanel>
 
              
-
-                <h3>Details about the person who has contacted you on behalf of victim</h3>
-                <table id="Table2" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
-                    <tr>
-                        <td width="15%"><label>Name</label></td>
-                        <td><asp:TextBox ID="txtNameBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Address</label></td>
-                        <td><asp:TextBox ID="txtAddressBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Phone Number</label></td>
-                        <td><asp:TextBox ID="txtPhoneBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>How is the person related to victim?</label></td>
-                        <td><asp:TextBox ID="txtRelationBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                </table>
-
                  <h3>Questions related to pre-departure situation and transit</h3>
                 <table>
                     <tr>
-                        <td width="20%"><label>Reasons for FE</label></td>
-                        <td><asp:TextBox ID="txtReasonsForFE" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Pre-departure costs</label></td>
+                        <td width="20%"><label>Pre-departure costs</label></td>
                         <td><asp:TextBox ID="txtPreDepartureCosts" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
 
@@ -235,19 +207,6 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td><label>How is the person related to victim?</label></td>
-                        <td><asp:TextBox ID="txtRelationNepal" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Address Recruitment agency</label></td>
-                        <td><asp:TextBox ID="txtAddressRecruitmentAgency" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Address Agent (in case of individual)</label></td>
-                        <td><asp:TextBox ID="txtAddressAgent" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
                     <tr>
                         <td><label>Did the person sign a contract before leaving Nepal?</label></td>
                         <td>
@@ -290,50 +249,12 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
                         <td><label>Status at departure</label></td>
                         <td>
                             Documented:<asp:RadioButton ID="rbStatusAtDepartureDocumented" GroupName="rbStatusAtDeparture" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                             Undocumented:<asp:RadioButton ID="rbStatusAtDepartureUnDocumented" GroupName="rbStatusAtDeparture"  runat="server" />
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign=""><label>Problems faced during transit</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="20%">Long waiting time:<asp:RadioButton ID="rbProblemTransitLongWaiting" GroupName="rbProblemTransit" runat="server" /> (how long)</td>
-                                    <td>
-                                        <asp:TextBox ID="txtLongWaitingTransitDetails" runat="server" CssClass="form-control input-sm"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Harassment:<asp:RadioButton ID="rbProblemTransitHarassment" GroupName="rbProblemTransit" runat="server" /></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Other:<asp:RadioButton ID="rbProblemTransitOther" GroupName="rbProblemTransit" runat="server" /></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">None:<asp:RadioButton ID="rbProblemTransitNone" GroupName="rbProblemTransit" runat="server" /></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
+                    </tr>                  
 
                 </table>
 
@@ -345,54 +266,12 @@
                             <asp:DropDownList ID="ddlDestinationCountry" runat="server" CssClass="form-control input-sm"></asp:DropDownList>
                         </td>
                     </tr>
+                   
                     <tr>
-                        <td><label>When did the victim arrive in the destination country?</label></td>
-                        <td><asp:TextBox ID="txtArrivedInDestinationCountry" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>How long did the victim stay in the country?</label> </td>
+                        <td><label>How long did the person stay in the country this time?</label> </td>
                         <td><asp:TextBox ID="txtCountryStayDuration" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
-                    <tr>
-                        <td><label>Employer details (name, address)</label> </td>
-                        <td><asp:TextBox ID="txtEmployerDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><label>When did the person arrive in Nepal/is the person still in the country</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="18%">Date of arrival in Nepal</td>
-                                    <td><asp:TextBox ID="txtDateOfArrivalNepal" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td>Still in the country</td>
-                                    <td><asp:CheckBox ID="chkStillInTheCountry" runat="server" /></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Status in the country of destination before return</label></td>
-                        <td>
-                            Documented:<asp:RadioButton ID="rbDestinationStatusBeforeReturnDocumented" GroupName="rbDestinationStatusBeforeReturn" runat="server" />&nbsp; 
-                            &nbsp; &nbsp; &nbsp; &nbsp; 
-                            Undocumented:<asp:RadioButton ID="rbDestinationStatusBeforeReturnUndocumented" GroupName="rbDestinationStatusBeforeReturn"  runat="server" />&nbsp;
-                        </td>
-                    </tr>
+                    
                     <tr>
                         <td><label>Status in the country of destination before return</label></td>
                         <td>
@@ -403,13 +282,22 @@
                     </tr>
 
                     <tr>
-                        <td><label>How many years in total did the person spend in FE (including previous contracts)</label> </td>
+                        <td><label>How many times has the person been in FE (including all previous years of FE)</label> </td>
                         <td><asp:TextBox ID="txtTotalYearsSpent" runat="server" CssClass="form-control input-sm" ></asp:TextBox></td>
                     </tr>
 
                 </table>
 
                  <h3>Questions related to experience in the destination country</h3>
+                <div class="clearfix col-md-12">
+                    <span style="color:red; font-style:italic;">
+                        If it is not practical to fill in this form for persons without problem then pls do not do it. 
+                        However, if you have time or the person is literate and can fill in the form herself, 
+                        then it would be good because it would show us whether women who feel they didn’t have problems actually 
+                        did have some of the problems listed below
+                    </span>
+                </div>
+
                 <table>
                     <tr>
                         <td width="25%"><label>Did the person sign another contract in the destination country?</label></td>
@@ -588,9 +476,9 @@
                     </tr>
 
                     <tr>
-                        <td><label>What did the victim do when the salary was not paid? 
-How did the employer react?
-</label></td>
+                        <td>
+                            <label>What did the victim do when the salary was not paid? How did the employer react?</label>
+                        </td>
                         <td><asp:TextBox ID="txtSalaryNotPaidDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>
 
@@ -645,101 +533,8 @@ How did the employer react?
                     <tr>
                         <td><label>How did the employer react?</label></td>
                         <td><asp:TextBox ID="txtEmployerReact" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><h4><label>Dismissal</label></h4></td>
-                    </tr>
-                    <tr>
-                        <td><label>When did the employer dismiss the person?</label></td>
-                        <td><asp:TextBox ID="txtPersonDismissalWhen" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                     <tr>
-                        <td><label>What was the reason given?</label></td>
-                        <td><asp:TextBox ID="txtDismissalGivenReason" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-                     <tr>
-                        <td><label>How did the employer dismiss the person? Circumstances of the dismissal</label></td>
-                        <td><asp:TextBox ID="txtDismisallCircumstances" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Physical abuse:Did the person suffer from physical abuse? If yes, pls describe</label></td>
-                        <td><asp:TextBox ID="txtPhysicalAbuse" runat="server" CssClass="form-control input-sm" TextMode="MultiLine" placeholder="pls describe...  Perpetrator: Name and relation to the employer"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Emotional abuse: Did the person suffer from emotional abuse</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td colspan="2">
-                                        <asp:DropDownList ID="ddlEmotionalAbuse" runat="server" CssClass="form-control input-sm">
-                                            <asp:ListItem Value="">None</asp:ListItem>
-                                            <asp:ListItem Value="">Shouting</asp:ListItem>
-                                            <asp:ListItem Value="One">Humiliating talk</asp:ListItem>
-                                            <asp:ListItem Value="Two">Other</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="10%">If Other:</td>
-                                    <td><asp:TextBox ID="txtEmotionalAbuseOther" runat="server" CssClass="form-control input-sm" placeholder="Perpetrator: Name and relation to the employer"></asp:TextBox></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                   <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Sexual abuse: did the person suffer from sexual abuse. </label></td>
-                        <td><asp:TextBox ID="txtSexualAbuse" runat="server" CssClass="form-control input-sm" TextMode="MultiLine" placeholder="pls describe....  Perpetrator: Name and relation to the employer"></asp:TextBox></td>
-                    </tr>
+                    </tr>                    
                 </table>
-
-
-
-                <h3>Steps taken to resolve the case</h3>
-                <table id="Table1" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
-                    <tr>
-                        <td width="35%"><label>Before the person reached your organization, did s/he take any steps to resolve the situation?</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="10%">Contacted</td>
-                                    <td>
-                                        <asp:DropDownList ID="ddlContactedOrganization" runat="server" CssClass="form-control input-sm">
-                                            <asp:ListItem Value="None">None</asp:ListItem>
-                                            <asp:ListItem Value="Embassy">Embassy</asp:ListItem>
-                                            <asp:ListItem Value="Recruitment agency ">Recruitment agency </asp:ListItem>
-                                            <asp:ListItem Value="Agent">Agent</asp:ListItem>
-                                            <asp:ListItem Value="Family">Family</asp:ListItem>
-                                            <asp:ListItem Value="Police">Police</asp:ListItem>
-                                            <asp:ListItem Value="Labour Court">Label Court</asp:ListItem>
-                                            <asp:ListItem Value="Other Organization">Other Organization</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Pls describe how the service by other institutions contacted was perceived by the victim</label></td>
-                        <td>
-                            <asp:TextBox ID="txtServiceByOtherInstitutionsDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox>
-                        </td>
-                    </tr>
-            </table>
 
                 <h3>Services by Pourakhi</h3>
                 <table id="Table5" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
@@ -757,234 +552,10 @@ How did the employer react?
                     </tr>
 
                     <tr>
-                        <td colspan="2"><h4><label>Psychosocial support</label></h4></td>
-                    </tr>
-                    <tr>
-                        <td><label>What was the psychosocial situation of the victim?</label> </td>
-                        <td><asp:TextBox ID="txtPsychosocialSitutaionOfVictim" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>What service did Pourakhi provide? Who provided what service?</label> </td>
-                        <td><asp:TextBox ID="txtPourakhiServiceDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine" 
-                            placeholder="Name of counselor
-                            How many sessions?
-                            What was done/discussed?
-                            "></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Pls describe progress/situation at the date of discharge from Pourakhi: what progress was observed and what is still problematic?</label> </td>
-                        <td><asp:TextBox ID="txtProgressStituationDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-
-
-                    <tr>
-                        <td colspan="2"><h4><label>Health support</label></h4></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Helath Checkup</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="18%"><label>By Whom?</label> </td>
-                                    <td><asp:TextBox ID="txtHealthCheckupBy" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td><label>What was the diagnosis?</label> </td>
-                                    <td><asp:TextBox ID="txtHealthCheckupDiagnosis" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Treatment</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="18%"><label>By Whom?</label> </td>
-                                    <td><asp:TextBox ID="txtTreatmentBy" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Medication provided – by POurakhi – by hospital/clinic?</label> </td>
-                                    <td><asp:TextBox ID="txtMedicationProvidedBy" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Pls describe progress at the date of discharge from Pourakhi</label> </td>
-                        <td><asp:TextBox ID="txtProgressOnDischarge" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><label>Paralegal service</label></td>
-                    </tr>
-                    <tr>
-                        <td><label>Problem addressed: For what reason was paralegal service provided </label> </td>
-                        <td><asp:TextBox ID="txtParalegalProblemAddressed" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Organization referred to if any</label> </td>
-                        <td><asp:TextBox ID="txtOrganizationReferred" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Progress at the date of discharge from Pourakhi</label> </td>
-                        <td><asp:TextBox ID="txtParalegalProgressOnDischarge" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><label>Compensation</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td colspan="2">Received:<asp:RadioButton ID="rbCompensationReceivedYes" GroupName="rbCompensationReceived"  runat="server" /></td>
-                                </tr>
-                                <tr>
-                                    <td width="15%">How much?</td>
-                                    <td><asp:TextBox ID="txtCompensationReceivedHowMuch" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td>By Whom?</td>
-                                    <td><asp:TextBox ID="txtCompensationReceivedBy" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td>Not Received:<asp:RadioButton ID="rbCompensationReceivedNo" GroupName="rbCompensationReceived"  runat="server" /></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                </table>
-
-
-
-                <h3>Follow-up of the case What kind of follow-up does the person need</h3>
-                <table id="Table4" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
-                    <tr>
-                        <td width="25%"><label>Was the SaMI or other ICC in the home district informed of her return?</label></td>
-                        <td>
-                            <asp:RadioButton ID="rbSaMIICCInformedYes" GroupName="rbSaMIICCInformed" runat="server" />Yes&nbsp; 
-                            <asp:RadioButton ID="rbSaMIICCInformedNo" GroupName="rbSaMIICCInformed"  runat="server" />No&nbsp;
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><label>Psychosocial – if yes, to whom was the case referred</label> </td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td colspan="2">Yes&nbsp;&nbsp;<asp:RadioButton ID="rbPsychologicalCaseReferredYes" GroupName="rbPsychologicalCaseReferred"  runat="server" /></td>
-                                </tr>
-                                <tr>
-                                    <td width="20%">To whom case was referred?</td>
-                                    <td><asp:TextBox ID="txtCaseReferredWhom" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td>No&nbsp;&nbsp;<asp:RadioButton ID="rbPsychologicalCaseReferredNo" GroupName="rbPsychologicalCaseReferred"  runat="server" /></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>How many visits or other contacts was done?</label></td>
-                        <td><asp:TextBox ID="txtHowManyVisistsOrContacts" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><label>Health</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="10%">For what</td>
-                                    <td><asp:TextBox ID="txtHealthForWhat" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td>Referred to whom</td>
-                                    <td><asp:TextBox ID="txtHealthReferredToWhom" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td valign="top"><label>Legal</label></td>
-                        <td>
-                            <table width="100%">
-                                <tr>
-                                    <td width="10%">For what</td>
-                                    <td><asp:TextBox ID="txtLegalForWhat" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                                <tr>
-                                    <td>Referred to whom</td>
-                                    <td><asp:TextBox ID="txtLegalReferredToWhom" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                                </tr>
-                            </table>
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Any information about the progress of the case after discharge from Pourakhi?</label></td>
-                        <td><asp:TextBox ID="txtProgressAfterDischarge" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                        <td><label>Other</label> </td>
+                        <td><asp:TextBox ID="txtOtherDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>                    
                 </table>
-
 
                 <table width="100%">
                     <tr>
@@ -997,11 +568,8 @@ How did the employer react?
         </div>
 
     <asp:HiddenField ID="hfFLACShelterProfileID" runat="server" Value="" />
-    <asp:HiddenField ID="hfFLACShelterVictimBehalfID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterQRelatedPreDepartureID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterQRelatedDestinationID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterQRelatedExpDestinationID" runat="server" Value="" />
-    <asp:HiddenField ID="hfFLACShelterStepsTakenID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterPourakhiServiceID" runat="server" Value="" />
-    <asp:HiddenField ID="hfFLACShelterCaseFollowupID" runat="server" Value="" />
 </asp:Content>
