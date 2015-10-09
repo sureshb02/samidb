@@ -20,8 +20,7 @@
                 }
             });
         });
-    </script>
-    <script type="text/javascript">
+
         $(document).ready(function () {
             $('#ctl00_MainContent_txtRegistrationDateFrom').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true });
             $('#ctl00_MainContent_txtRegistrationDateTo').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true });

@@ -51,7 +51,7 @@
                         <ContentTemplate>
 
 
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                          <table width="100%" cellpadding="5" cellspacing="0">
                             <tr>
                                 <td>
@@ -72,6 +72,12 @@
                                     <asp:DropDownList ID="ddlDistrict" runat="server" CssClass="form-control" 
                             OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged" AutoPostBack="true">
                             </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlOrganization" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlOrganization_SelectedIndexChanged"
+                                    >
+                                    <asp:ListItem Text="[Organization]" Value="0"></asp:ListItem>
+                                </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>

@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 <script type="text/javascript">
     function ValidateInput() {
-        if ($('#ctl00_MainContent_txtOrganizationName').val() == '')
-            return false;
+        if ($('#ctl00_MainContent_txtOrganizationName').val() == '' || $('#ctl00_MainContent_ddlDistrict').val() == '0') {
+            alert('Please provide both District and Organization Name');return false;
+        }
         else
             return true;
     }

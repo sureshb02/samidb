@@ -70,6 +70,12 @@
                                         OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlOrganization" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlOrganization_SelectedIndexChanged"
+                                    >
+                                    <asp:ListItem Text="[Organization]" Value="0"></asp:ListItem>
+                                </asp:DropDownList>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -225,15 +231,21 @@
                         <div class="col-md-12">
                             <h4>Total Visitors</h4>
                         </div>
-                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:510px">
+                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:600px">
                             <div class="clearfix"></div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <table width="100%" cellpadding="5" cellspacing="0">
                                     <tr>
                                         <td>
                                             <asp:DropDownList ID="ddlDistrictVisitors" runat="server" CssClass="form-control" AutoPostBack="True"
                                                 OnSelectedIndexChanged="ddlDistrictVisitors_SelectedIndexChanged">
                                             </asp:DropDownList>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlOrganizationVisitors" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlOrganizationVisitors_SelectedIndexChanged"
+                                            >
+                                            <asp:ListItem Text="[Organization]" Value="0"></asp:ListItem>
+                                        </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
@@ -259,15 +271,21 @@
     <div class="col-md-12">
                             <h4>Means  of referrel</h4>
                         </div>
-                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:610px">
+                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:600px">
                             <div class="clearfix"></div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <table width="100%" cellpadding="5" cellspacing="0">
                                     <tr>
                                         <td>
                                             <asp:DropDownList ID="ddlReferalDistrict" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlReferalDistrict_SelectedIndexChanged"
                                                 >
                                             </asp:DropDownList>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlReferalOrganization" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlReferalOrganization_SelectedIndexChanged"
+                                            >
+                                            <asp:ListItem Text="[Organization]" Value="0"></asp:ListItem>
+                                        </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
