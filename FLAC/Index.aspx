@@ -63,6 +63,60 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
+
+                <div class="clearfix"></div>
+                <a name="jailed"></a>
+                <div class="col-md-12">
+                    <h3>
+                       Jailed
+                        <a href="Jailed/Add.aspx">
+                            <span class="btn btn-default">Add</span>
+                        </a>
+                    </h3>
+                </div>  
+                <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                    <ContentTemplate>
+                          <div class="col-md-12">
+                                 <asp:GridView ID="gvFLACJailed" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
+                        ShowHeader="True" CssClass="table table-striped table-hover pagination" PagerStyle-CssClass="paging"
+                        AllowPaging="True" OnRowCommand="gvFLACJailed_RowCommand" PageSize="10" GridLines="None"
+                        OnPageIndexChanging="gvFLACJailed_PageIndexChanging">
+                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="10" FirstPageText="<<" LastPageText=">>"
+                            NextPageText="&gt;" PreviousPageText="<" />
+                        <Columns>
+                            <asp:TemplateField>
+                            <ItemTemplate>
+                                <%#Container.DataItemIndex + 1 %>.
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                           
+                            <asp:HyperLinkField HeaderText="Case Number" DataTextField="CaseNumber" DataNavigateUrlFields="FLACProfileID"
+                                DataNavigateUrlFormatString="~/FLAC/HealthNSaftey/View.aspx?ID={0}" />
+                            <asp:BoundField DataField="FullName" HeaderText="Full Name" />
+                            <asp:BoundField DataField="DistrictName" HeaderText="District" />
+                            <asp:BoundField DataField="VDCName" HeaderText="VDC" />
+                            <asp:BoundField DataField="EthnicityName" HeaderText="Ethnicity" />
+                            <asp:BoundField DataField="GeoBasedRegion" HeaderText="Region" />
+                            
+                            <asp:BoundField DataField="CountryName" HeaderText="Destination Country" />
+                            <asp:BoundField DataField="CaseType" HeaderText="Case Type" />
+                            <asp:BoundField DataField="CreatedDate" HeaderText="Date" />
+                            <asp:HyperLinkField HeaderText="Edit" DataNavigateUrlFields="FLACProfileID" Text="Edit"
+                                DataNavigateUrlFormatString="Jailed/Edit.aspx?ID={0}" />
+                            <asp:TemplateField HeaderText="">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandArgument='<%# Eval("FLACProfileID") %>' 
+                                         Text="Delete"
+                                        CommandName="cmdDelete" OnClientClick="return confirm('Are you sure to delete?');"></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <PagerStyle CssClass="paging" />
+                    </asp:GridView>
+                         </div>                         
+                    </ContentTemplate>
+                </asp:UpdatePanel> 
+
                 <div class="clearfix"></div>
                 <a name="death"></a>
                 <div class="col-md-12">
@@ -224,6 +278,9 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
+
+
+                
     </div>
 
 </asp:Content>

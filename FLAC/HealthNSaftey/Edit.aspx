@@ -442,7 +442,9 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                        <label>How was the contract different from the contract signed in Nepal?</label> 
+                            <label>How was the contract different from the contract signed in Nepal?</label> 
+                                <asp:TextBox ID="txtHowContractDifferentFromSigned" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+
                         </td>
                     </tr>
                     <tr>
@@ -687,6 +689,388 @@
                         </td>
                     </tr>
                 </table>
+
+                <h3>Details about the person who has contacted you on behalf of client</h3>
+                <table id="Table2" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
+                    <tr>
+                        <td width="15%"><label>Name</label></td>
+                        <td><asp:TextBox ID="txtNameBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Address</label></td>
+                        <td><asp:TextBox ID="txtAddressBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Phone Number</label></td>
+                        <td><asp:TextBox ID="txtPhoneBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>How is the person related to victim?</label></td>
+                        <td><asp:TextBox ID="txtRelationBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>                    
+                    <tr>
+                        <td><label>Date when case was received</label></td>
+                        <td><asp:TextBox ID="txtCaseReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>From where was case referred</label></td>
+                        <td><asp:TextBox ID="txtFromWhereCaseReffered" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                </table>
+
+
+                <h3>Incident Information</h3>
+                <table id="Table1" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
+                    <tr>
+                        <td width="20%"><label>Date of incident</label></td>
+                        <td><asp:TextBox ID="txtDateOfIncident" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Country/place of incident</label></td>
+                        <td><asp:TextBox ID="txtPlaceOfIncident" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Problem faced : nature of cases categories</label></td>
+                        <td><asp:TextBox ID="txtProblemFacedDetails" placeholder="Please specify whether the person is in deportation center or in jail" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Incident details</label></td>
+                        <td><asp:TextBox ID="txtIncidentDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Situation/circumstances before incident</label></td>
+                        <td><asp:TextBox ID="txtSituationCircumstancesBeforeIncident" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>Incident witness</label></td>
+                        <td><asp:TextBox ID="txtIncidentWitness" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                </table>
+
+                <h3>Medical Test / Compensation Information</h3>
+                <table id="Table4" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
+                    <tr>
+                        <td colspan="2"><label>Medical certificate in Nepal</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><label>i)Medical Institute (source country):</label></td>
+                        <td><asp:TextBox ID="txtMedicalInstituteNepal" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>ii)  Medical Certificate date:</label></td>
+                        <td><asp:TextBox ID="txtMedicalNepalCertificateDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td><label>iii)  Medical checkup report:</label></td>
+                        <td><asp:TextBox ID="txtMedicalNepalCheckupReport" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label style="font-style:italic;">
+                            If the Migrant Worker failed the Medical test please explain the reason behind</label>
+                            <asp:TextBox ID="txtMedicalNepalTestFailedReason" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Medical Test (Dest. Country):</label></td>
+                        <td><asp:TextBox ID="txtMedicalTestDest" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label style="font-style:italic;">
+                            If the Migrant Worker failed the Medical test please explain the reason behind</label>
+                            <asp:TextBox ID="txtMedicalDestTestFailedReason" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table width="100%">
+                                <tr>
+                                    <td width="160"><label>ID Card No.:</label></td>
+                                    <td><asp:TextBox ID="txtIDCardNo" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><label>Date of issue:</label></td>
+                                    <td><asp:TextBox ID="txtIDCardDateOfIssue" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><label>Duration of validity</label></td>
+                                    <td><asp:TextBox ID="txtIDCardDurationOfValidity" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table width="100%">
+                                <tr>
+                                    <td width="160"><label>Visa No.:</label></td>
+                                    <td><asp:TextBox ID="txtVisaNo" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><label>Date of issue:</label></td>
+                                    <td><asp:TextBox ID="txtVisaDateOfIssue" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><label>Duration of validity</label></td>
+                                    <td><asp:TextBox ID="txtVisaDurationOfValidity" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table width="100%">
+                                <tr>
+                                    <td width="160"><label>Insurance (Dest. Country):</label></td>
+                                    <td><asp:TextBox ID="txtInsuranceDest" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><label>Date of issue:</label></td>
+                                    <td><asp:TextBox ID="txtInsuranceDestDateOfIssue" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><label>Duration of validity</label></td>
+                                    <td><asp:TextBox ID="txtInsuranceDestDurationOfValidity" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><label>Compensation Information</label></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <table width="100%" class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="20%">&nbsp;</th>
+                                        <th>Amount</th>
+                                        <th>Received Date</th>
+                                        <th>Time Period</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Due salary + allowances (Destination) </td>
+                                        <td><asp:TextBox ID="txtDueSalaryDestAmount" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtDueSalaryDestReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtDueSalaryDestTimePeriod" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Insurance (destination)</td>
+                                        <td><asp:TextBox ID="txtInsuranceDestAmount" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtInsuranceDestReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtInsuranceDestTimePeriod" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>FEPB (source)</td>
+                                        <td><asp:TextBox ID="txtFEPBSourceAmount" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtFEPBSourceReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtFEPBSourceTimePeriod" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Insurance (source)</td>
+                                        <td><asp:TextBox ID="txtInsuranceSourceAmount" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtInsuranceSourceReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                        <td><asp:TextBox ID="txtInsuranceSourceTimePeriod" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Explanation</td>
+                        <td><asp:TextBox ID="txtCompensationExplanation" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Steps taken to resolve the case</h3>
+                <table id="Table3" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
+                     <tr>
+                        <td width="35%"><label>Who referred the case to you?</label></td>
+                        <td><asp:TextBox ID="txtWhoReferredCase" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Before the person reached your organization, did s/he take any steps to resolve the situation?</label></td>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td width="10%">Contacted</td>
+                                    <td>
+                                        <asp:DropDownList ID="ddlContactedOrganization" runat="server" CssClass="form-control input-sm">
+                                            <asp:ListItem Value="None">None</asp:ListItem>
+                                            <asp:ListItem Value="Embassy">Embassy</asp:ListItem>
+                                            <asp:ListItem Value="Recruitment agency ">Recruitment agency </asp:ListItem>
+                                            <asp:ListItem Value="Agent">Agent</asp:ListItem>
+                                            <asp:ListItem Value="Family">Family</asp:ListItem>
+                                            <asp:ListItem Value="Police">Police</asp:ListItem>
+                                            <asp:ListItem Value="Labour Court">Label Court</asp:ListItem>
+                                            <asp:ListItem Value="Other Organization">Other Organization</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>How was the reaction by those other support structures?</label></td>
+                        <td>
+                            <asp:TextBox ID="txtOtherSupportReactionDetail" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>What was the role of ICC to support in this case? Please mention</label> </td>
+                        <td><asp:TextBox ID="txtICCSuportDetail" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                What are the steps taken after the victim contacted your organization?
+                                Pls describe all actions taken and the reaction
+                                <br /><br /></label>
+                                <span style="font-style:italic;">
+                                    This part has to be filled as the case is being handled, i.e. each time a new measure is taken, 
+                                    it should be noted and the result of the step taken should be described
+                                </span>
+                        </td>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td width="20%">Hospital/doctor/psychologist</td>
+                                    <td><asp:TextBox ID="txtWithHospital" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td>With Company</td>
+                                    <td><asp:TextBox ID="txtWithCompany" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr> 
+                                <tr>
+                                    <td>With DOFE</td>
+                                    <td><asp:TextBox ID="txtWithDOFE" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr> 
+                                <tr>
+                                    <td>With Agent/Recruitment agent</td>
+                                    <td><asp:TextBox ID="txtWithAgentRecruitmentAgent" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td>With ICC</td>
+                                    <td><asp:TextBox ID="txtWithICC" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr> 
+                                <tr>
+                                    <td>With embassy</td>
+                                    <td><asp:TextBox ID="txtWithEmbassy" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>With FEPB</td>
+                                    <td><asp:TextBox ID="txtWithFEPB" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>                      
+                                <tr>
+                                    <td>Others</td>
+                                    <td><asp:TextBox ID="txtWithOthers" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Compensation received</label></td>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td colspan="2"><label>From Nepal:</label></td>
+                                </tr>
+                                <tr>
+                                    <td width="20%">Insurance:</td>
+                                    <td><asp:TextBox ID="txtCompensationNepalInsurance" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td>FEPB:</td>
+                                    <td><asp:TextBox ID="txtCompensationNepalFEPB" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td>Recruitment agency:</td>
+                                    <td><asp:TextBox ID="txtCompensationNepalRecruitmentAgency" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><label>From Destination:</label></td>
+                                </tr>
+                                <tr>
+                                    <td>Employer:</td>
+                                    <td><asp:TextBox ID="txtCompensationDestEmployer" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td>Insurance Company:</td>
+                                    <td><asp:TextBox ID="txtCompensationDestInsuranceCompany" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="liner">&nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                            <td colspan="2">
+                            <table width="100%">
+                                <tr>
+                                    <td width="10%">Solved?</td>
+                                    <td>
+                                        <asp:RadioButton ID="rbCompensationSolvedYes" GroupName="rbCompensationSolved" runat="server" />Solved&nbsp; 
+                                        <asp:RadioButton ID="rbCompensationSolvedNo" GroupName="rbCompensationSolved"  runat="server" />Not Solved&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Final result, reasons for inability to solve case
+                                        <asp:TextBox ID="txtFinalResult" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                                </tr>                                
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
                 <table width="100%">
                     <tr>
                         <td>
@@ -700,4 +1084,8 @@
     <asp:HiddenField ID="hfFLACProfileID" runat="server" Value="" />
     <asp:HiddenField ID="hfRecruitmentProcessID" runat="server" Value="" />
     <asp:HiddenField ID="hfEmploymentInformationID" runat="server" Value="" />
+    <asp:HiddenField ID="hfFLACClientBehalfID" runat="server" Value="" />
+    <asp:HiddenField ID="hfFLACIncidentInformationID" runat="server" Value="" />
+    <asp:HiddenField ID="hfFLACMedicalCompensationInformationID" runat="server" Value="" />
+    <asp:HiddenField ID="hfFLACStepsTakenID" runat="server" Value="" />
  </asp:Content>
