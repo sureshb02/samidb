@@ -351,7 +351,8 @@
                         <td valign="top"><label>Receipt Taken</label></td>
                         <td>
                             <asp:RadioButton ID="rbReceiptTakenYes" GroupName="receipt-taken" runat="server" />Yes&nbsp;
-                            <asp:RadioButton ID="rbReceiptTakenNo" GroupName="receipt-taken" runat="server" />No<br />
+                            <asp:RadioButton ID="rbReceiptTakenNo" GroupName="receipt-taken" runat="server" />No&nbsp;
+                            <asp:RadioButton ID="rbReceiptTakenNotAvailable" GroupName="receipt-taken" runat="server" />Not available&nbsp;<br />
 
                             <em>If reciept take please specify the amount below.</em><br />
                             <table width="100%">
@@ -678,11 +679,26 @@
                     </tr>
 
                     <tr>
-                        <td>
+                        <td valign="top">
                             <label> Insurance (Dest. Country)</label>
                         </td>
                         <td>
-                            <asp:CheckBox ID="chkDestinationInsuranceYes" runat="server" />
+                            <asp:RadioButton ID="rbDestInsuranceYes" GroupName="rbDestInsurance" runat="server" />Yes&nbsp; 
+                            <asp:RadioButton ID="rbDestInsuranceNo" GroupName="rbDestInsurance"  runat="server" />No&nbsp;
+                            <table width="100%">
+                                <tr>
+                                    <td width="18%"><label>Name of Insurance Company:</label></td>
+                                    <td><asp:TextBox ID="txtDestInsuranceCompany" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                 <tr>
+                                    <td><label>Date of Issue of Insurance:</label></td>
+                                    <td><asp:TextBox ID="txtDestInsuranceIssuedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                 <tr>
+                                    <td><label>Duration of Insurance:</label></td>
+                                    <td><asp:TextBox ID="txtDestInsuranceDuration" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>

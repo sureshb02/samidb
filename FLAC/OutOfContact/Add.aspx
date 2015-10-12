@@ -551,11 +551,11 @@
                     
                     <tr>
                         <td width="20%"><label>Country of destination</label></td>
-                        <td><asp:TextBox ID="txtCountryOfDestination" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                        <td><asp:DropDownList ID="ddlCountryOfDestination" runat="server" CssClass="form-control input-sm"></asp:DropDownList></td>
                     </tr>
                     <tr>
                         <td><label>How long did the sufferer stay in the country?</label></td>
-                        <td><asp:TextBox ID="txtSuffereStayDuration" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                        <td><asp:TextBox ID="txtSuffererStayDuration" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td><label>Stay abroad</label></td>
@@ -640,7 +640,7 @@
                     </tr>
                     <tr>
                         <td><label>What did the person or his/her family ask you to do?</label> </td>
-                        <td><asp:TextBox ID="txtAskToDoDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
+                        <td><asp:TextBox ID="txtFamilyAskToDoDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>
 
                     <tr>
@@ -676,7 +676,7 @@
                                 </tr>
                                 <tr>
                                     <td>With Support Organization in the Destination Country</td>
-                                    <td><asp:TextBox ID="TextBox1" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><asp:TextBox ID="txtWithSupportOrganizationDest" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                                 </tr>                                
                                 <tr>
                                     <td>Others</td>
