@@ -29,7 +29,7 @@
         </span>
         <span class="col-md-3">
          <asp:DropDownList ID="ddlSaMIOrganization" runat="server" CssClass="form-control" 
-            AutoPostBack="True" onselectedindexchanged="ddlDistrict_SelectedIndexChanged">
+            AutoPostBack="True" OnSelectedIndexChanged="ddlSaMIOrganization_SelectedIndexChanged" >
              <asp:ListItem Text="[Organization]"></asp:ListItem>
             </asp:DropDownList>
         </span>
