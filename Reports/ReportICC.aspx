@@ -7,7 +7,7 @@
 
             $('#ctl00_MainContent_txtRegistrationDateFrom').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true });
             $('#ctl00_MainContent_txtRegistrationDateTo').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true });
-
+           
         });
     </script>
 </asp:Content>
@@ -231,7 +231,7 @@
                         <div class="col-md-12">
                             <h4>Total Visitors</h4>
                         </div>
-                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:600px">
+                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:700px">
                             <div class="clearfix"></div>
                             <div class="col-lg-12">
                                 <table width="100%" cellpadding="5" cellspacing="0">
@@ -271,7 +271,7 @@
     <div class="col-md-12">
                             <h4>Means  of referrel</h4>
                         </div>
-                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:600px">
+                        <div class="well" style="display: inline-block; float: left; margin: 5px; overflow: hidden; width:700px">
                             <div class="clearfix"></div>
                             <div class="col-lg-12">
                                 <table width="100%" cellpadding="5" cellspacing="0">
@@ -286,6 +286,30 @@
                                             >
                                             <asp:ListItem Text="[Organization]" Value="0"></asp:ListItem>
                                         </asp:DropDownList>
+                                        </td>
+                                        <td>
+                                            <span class="col-lg-6">
+                                                <asp:DropDownList ID="ddlReferalYear" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlReferalYearRange_SelectedIndexChanged">
+                                                </asp:DropDownList>
+                                            </span>
+                                            <span class="col-lg-6">
+                                                <asp:DropDownList ID="ddlReferalMonth" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlReferalYearRange_SelectedIndexChanged">
+                                                    <asp:ListItem Value="">--Month--</asp:ListItem> 
+                                                    <asp:ListItem Value="01">Jan</asp:ListItem> 
+                                                    <asp:ListItem Value="02">Feb</asp:ListItem> 
+                                                    <asp:ListItem Value="03">Mar</asp:ListItem> 
+                                                    <asp:ListItem Value="04">Apr</asp:ListItem> 
+                                                    <asp:ListItem Value="05">May</asp:ListItem> 
+                                                    <asp:ListItem Value="06">Jun</asp:ListItem> 
+                                                    <asp:ListItem Value="07">Jul</asp:ListItem> 
+                                                    <asp:ListItem Value="08">Aug</asp:ListItem> 
+                                                    <asp:ListItem Value="09">Sep</asp:ListItem> 
+                                                    <asp:ListItem Value="10">Oct</asp:ListItem> 
+                                                    <asp:ListItem Value="11">Nov</asp:ListItem> 
+                                                    <asp:ListItem Value="12">Dec</asp:ListItem> 
+                                                </asp:DropDownList>
+                                                
+                                            </span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -314,7 +338,6 @@
         function BeginRequestHandler(sender, args) {
             $('#ctl00_MainContent_txtRegistrationDateFrom').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true });
             $('#ctl00_MainContent_txtRegistrationDateTo').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true });
-
         }
 
         function EndRequestHandler(sender, args) {

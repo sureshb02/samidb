@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Free Legal Aid & Clinic" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="SaMI.Web.FLAC.Index" %>
+﻿<%@ Page Title="Free Legal Aid Clinic" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="SaMI.Web.FLAC.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -11,16 +11,17 @@
                     </h1>
                 </div>
                 
-                <a name="health-and-saftey"></a>
-                <div class="col-md-12">
-                    <h3>
-                            Health And Saftey
-                        <a href="HealthNSaftey/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <asp:Panel ID="pnlHealthNSaftey" runat="server">
+                    <a name="health-and-safety"></a>
+                    <div class="col-md-12">
+                        <h3>
+                                Health And Saftey
+                            <a href="HealthNSaftey/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
                                  <asp:GridView ID="gvFLACHealthNSaftey" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
@@ -62,19 +63,20 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel>
-
+                </asp:Panel>
 
                 <div class="clearfix"></div>
-                <a name="jailed"></a>
-                <div class="col-md-12">
-                    <h3>
-                       Jailed
-                        <a href="Jailed/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>  
-                <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                <asp:Panel ID="pnlJailed" runat="server">
+                    <a name="jailed"></a>
+                    <div class="col-md-12">
+                        <h3>
+                           Jailed
+                            <a href="Jailed/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>  
+                    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
                                  <asp:GridView ID="gvFLACJailed" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
@@ -116,20 +118,20 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
+                </asp:Panel>
 
-
-
-                <div class="clearfix"></div>
-                <a name="out-of-contact"></a>
-                <div class="col-md-12">
-                    <h3>
-                       Out Of Contact
-                        <a href="OutOfContact/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>  
-                <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                <asp:Panel ID="pnlOutOfContact" runat="server">
+                    <div class="clearfix"></div>
+                    <a name="out-of-contact"></a>
+                    <div class="col-md-12">
+                        <h3>
+                           Out Of Contact
+                            <a href="OutOfContact/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>  
+                    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
                                  <asp:GridView ID="gvOutOfContact" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
@@ -171,20 +173,21 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
+                </asp:Panel>
 
 
-
-                <div class="clearfix"></div>
-                <a name="contract-issue"></a>
-                <div class="col-md-12">
-                    <h3>
-                       Contract Issue
-                        <a href="ContractIssue/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>  
-                <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                <asp:Panel ID="pnlContractIssue" runat="server">
+                    <div class="clearfix"></div>
+                    <a name="contract-issue"></a>
+                    <div class="col-md-12">
+                        <h3>
+                           Contract Issue
+                            <a href="ContractIssue/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>  
+                    <asp:UpdatePanel ID="UpdatePanel7" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
                                  <asp:GridView ID="gvContractIssue" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
@@ -226,21 +229,21 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
+                </asp:Panel>
 
 
-
-
-                <div class="clearfix"></div>
-                <a name="death"></a>
-                <div class="col-md-12">
-                    <h3>
-                        Death
-                        <a href="Death/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>
-                <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                <asp:Panel ID="pnlDeath" runat="server">
+                    <div class="clearfix"></div>
+                    <a name="death"></a>
+                    <div class="col-md-12">
+                        <h3>
+                            Death
+                            <a href="Death/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
                                  <asp:GridView ID="gvFLACDeath" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
@@ -284,18 +287,21 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
-        
-                <div class="clearfix"></div>
-                <a name="shelter-with-problems"></a>
-                <div class="col-md-12">
-                    <h3>
-                        Shelter with problems
-                        <a href="ShelterWithProblems/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>  
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+                </asp:Panel>
+                
+                <asp:Panel ID="pnlShelterWithProblems" runat="server">
+                    <div class="clearfix"></div>
+                    <a name="shelter-with-problems"></a>
+                    <div class="col-md-12">
+                        <h3>
+                            Shelter with problems
+                            <a href="ShelterWithProblems/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>  
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
                                  <asp:GridView ID="gvFLACShelterWithProblem" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
@@ -337,22 +343,14 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
+                </asp:Panel>
 
 
-                <div class="clearfix"></div>
-                <a name="shelter-without-problems"></a>
-                <div class="col-md-12">
-                    <h3>
-                        Shelter without problems
-                        <a href="ShelterWithoutProblems/Add.aspx">
-                            <span class="btn btn-default">Add</span>
-                        </a>
-                    </h3>
-                </div>  
+                
                 <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
                           <div class="col-md-12">
-                                 <asp:GridView ID="gvFLACShelterWithoutProblem" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
+                                 <asp:GridView Visible="false" ID="gvFLACShelterWithoutProblem" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
                         ShowHeader="True" CssClass="table table-striped table-hover pagination" PagerStyle-CssClass="paging"
                         AllowPaging="True" OnRowCommand="gvFLACShelterWithoutProblem_RowCommand" PageSize="10" GridLines="None"
                         OnPageIndexChanging="gvFLACShelterWithoutProblem_PageIndexChanging">
@@ -391,6 +389,65 @@
                          </div>                         
                     </ContentTemplate>
                 </asp:UpdatePanel> 
+
+                
+        
+                <asp:Panel ID="pnlFLPAS" runat="server">
+                    <div class="clearfix"></div>
+                    <a name="free-legal-and-paralegal-service"></a>
+                    <div class="col-md-12">
+                        <h3>
+                            Free Legal and Paralegal Service (PF)
+                            <a href="FLAPS/Add.aspx">
+                                <span class="btn btn-default">Add</span>
+                            </a>
+                        </h3>
+                    </div>  
+                    <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+                    <ContentTemplate>
+                          <div class="col-md-12">
+                                 <asp:GridView ID="gvFLAPS" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
+                        ShowHeader="True" CssClass="table table-striped table-hover pagination" PagerStyle-CssClass="paging"
+                        AllowPaging="True" OnRowCommand="gvFLAPS_RowCommand" PageSize="10" GridLines="None"
+                        OnPageIndexChanging="gvFLAPS_PageIndexChanging">
+                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="10" FirstPageText="<<" LastPageText=">>"
+                            NextPageText="&gt;" PreviousPageText="<" />
+                        <Columns>
+                            <asp:TemplateField>
+                            <ItemTemplate>
+                                <%#Container.DataItemIndex + 1 %>.
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                           
+                            <asp:HyperLinkField HeaderText="Applicant Name" DataTextField="FullName" DataNavigateUrlFields="FLAC_FLPS_ProfileID"
+                                DataNavigateUrlFormatString="~/FLAC/FLAPS/View.aspx?ID={0}" />
+
+                            <asp:BoundField DataField="Gender" HeaderText="Applicant Gender" />
+                            <asp:BoundField DataField="ContactNumber1" HeaderText="Applicant Contact" />
+                            <asp:BoundField DataField="Name" HeaderText="Victim's Name" />
+                            <asp:BoundField DataField="GenderVictim" HeaderText="Victim's Gender" />
+                            <asp:BoundField DataField="ContactNumberVictim1" HeaderText="Victim Contact" />
+                            <asp:BoundField DataField="VictimDistrictName" HeaderText=" Victim District" />
+                            <asp:BoundField DataField="VictimVDCName" HeaderText="VictimVDC" />
+                            <asp:BoundField DataField="EthnicityName" HeaderText="Ethnicity" />
+                            <asp:BoundField DataField="CreatedDate" HeaderText="Date" />
+                            
+                            <asp:HyperLinkField HeaderText="Edit" DataNavigateUrlFields="FLAC_FLPS_ProfileID" Text="Edit"
+                                DataNavigateUrlFormatString="FLAPS/Edit.aspx?ID={0}" />
+                            <asp:TemplateField HeaderText="">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandArgument='<%# Eval("FLAC_FLPS_ProfileID") %>' 
+                                         Text="Delete"
+                                        CommandName="cmdDelete" OnClientClick="return confirm('Are you sure to delete?');"></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <PagerStyle CssClass="paging" />
+                    </asp:GridView>
+                         </div>                         
+                    </ContentTemplate>
+                </asp:UpdatePanel> 
+                </asp:Panel> 
 
 
                 

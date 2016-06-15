@@ -99,6 +99,7 @@ function ValidateChangePassword() {
 }
 
 function EnableDisablePartner() {
+    $('#ctl00_MainContent_pnlCaseTemplates').hide();
 
     if ($('#ctl00_MainContent_ddlUserType option:selected').text() == 'Case Partner') {
         $('#ctl00_MainContent_ddlPartner').removeAttr('disabled');
@@ -108,6 +109,7 @@ function EnableDisablePartner() {
 
         $('#ctl00_MainContent_ddlSaMIOrganization').attr('disabled', 'disabled');
         $('#ctl00_MainContent_ddlSaMIOrganization').val('0');
+        $('#ctl00_MainContent_pnlCaseTemplates').show();
 
     }
     else if ($('#ctl00_MainContent_ddlUserType option:selected').text() == 'Skill Partner') {

@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="Add Shelter With Problems" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Add.aspx.cs" Inherits="SaMI.Web.FLAC.ShelterWithProblems.Add" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.date_input').datepicker({ dateFormat: 'dd/mm/y', changeYear: true, changeMonth: true });
+        });
+    </script>
 </asp:Content>
 
 
@@ -15,33 +20,27 @@
                 
                
 
-                <h3>Detail about victim</h3>
+                <h3>Detail about client</h3>
                 <table id="personalDetails"width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
                     <tr>
                         <td width="15%"><label>Family Name</label></td>
                         <td>
                             <asp:TextBox ID="txtFamilyName" runat="server" CssClass="form-control input-sm" required="required"></asp:TextBox>
                         </td>
-                    </tr>
-                    <tr>
                         <td><label>First Name</label></td>
                         <td>
                             <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control input-sm" required="required"></asp:TextBox>
                         </td>
-                    </tr>
-                    <tr>
                         <td><label>District</label></td>
                         <td><asp:DropDownList ID="ddlDistrict" runat="server" CssClass="form-control input-sm" OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList></td>
                     </tr>
                     <tr>
                         <td><label>VDC</label></td>
                         <td><asp:DropDownList ID="ddlVDC" runat="server" CssClass="form-control input-sm"></asp:DropDownList></td>
-                    </tr>
-                    <tr>
+                   
                         <td><label>Ward</label></td>
                         <td><asp:TextBox ID="txtWardNo" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
+                    
                         <td><label>Phone Number</label></td>
                         <td>
                             <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="form-control input-sm"></asp:TextBox>
@@ -53,17 +52,16 @@
                         <td>
                             <asp:TextBox ID="txtPassportNumber" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                         </td>
-                    </tr>
-                    <tr>
+                    
                         <td><label>Citizenship No.</label></td>
                         <td>
                             <asp:TextBox ID="txtCitizenshipNumber" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                         </td>
-                    </tr>
-                     <tr>
-                        <td><label>Sex of victim</label></td>
+                    
+                        <td><label>Sex of client</label></td>
                         <td>
-                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control input-sm">
+                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control input-sm" required="required">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                 <asp:ListItem Value="M">Male</asp:ListItem>
                                 <asp:ListItem Value="F">Female</asp:ListItem>
                                 <asp:ListItem Value="O">Other</asp:ListItem>
@@ -73,10 +71,9 @@
                     <tr>
                         <td><label>Date of Birth</label></td>
                         <td>
-                            <asp:TextBox ID="txtDateOfBirth" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                            <asp:TextBox ID="txtDateOfBirth" runat="server" CssClass="form-control input-sm date_input"></asp:TextBox>
                         </td>
-                    </tr>
-                    <tr>
+                   
                         <td><label>Caste and Ethnicity</label></td>
                         <td>
                             <asp:DropDownList ID="ddlEthnicity" runat="server" CssClass="form-control input-sm"
@@ -86,8 +83,7 @@
                              <asp:RadioButtonList ID="rbValidRegions" runat="server" RepeatDirection="Horizontal">
                             </asp:RadioButtonList>
                         </td>
-                    </tr>
-                    <tr>
+                    
                         <td><label>Age</label></td>
                         <td>
                             <asp:TextBox ID="txtAge" runat="server" CssClass="form-control input-sm"></asp:TextBox>
@@ -95,30 +91,32 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="6">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
                    
                     <tr>
-                        <td valign="top"><label>If have taken Labour approval, then  number</label></td>
-                        <td>
+                        <td valign="top"><label>Labour approval taken</label></td>
+                        <td colspan="5">
                             <table width="100%">
                                 <tr>
                                     <td width="150">Yes:&nbsp;<asp:RadioButton ID="rbHaveLabourApporvalYes" GroupName="rbHaveLabourApporval"  runat="server" /></td>
                                     <td width="50">Number:</td>
-                                    <td><asp:TextBox ID="txtLabourApprovalNumber" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td width="300"><asp:TextBox ID="txtLabourApprovalNumber" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td>Undocumented:&nbsp;<asp:RadioButton ID="rbHaveLabourApporvalUndocumented" GroupName="rbHaveLabourApporval"  runat="server" /></td>
                                     <td colspan="2">Not Taken:&nbsp;<asp:RadioButton ID="rbHaveLabourApporvalNotTaken" GroupName="rbHaveLabourApporval"  runat="server" /></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="6">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
@@ -126,7 +124,8 @@
                     <tr>
                         <td><label>Education Status</label></td>
                         <td>
-                            <asp:DropDownList ID="ddlEducationStatus" runat="server" CssClass="form-control input-sm">
+                            <asp:DropDownList ID="ddlEducationStatus" runat="server" CssClass="form-control input-sm" required="required">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                 <asp:ListItem Value="Illitrate">Illitrate</asp:ListItem>
                                 <asp:ListItem Value="Litrate">Litrate</asp:ListItem>
                                 <asp:ListItem Value="Primary">Primary</asp:ListItem>
@@ -135,29 +134,26 @@
                                 <asp:ListItem Value="Post Graduate">Post Graduate</asp:ListItem>
                             </asp:DropDownList>
                         </td>
-                    </tr>
-                                        
-                    <tr>
+
                         <td><label>Marital Status</label></td>
                         <td>
                             <asp:DropDownList ID="ddlMaritalStatus" runat="server" CssClass="form-control input-sm">
                             </asp:DropDownList>
                         </td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td>
                             <label>Family Genogram</label>
                         </td>
-                        <td>
+                        <td colspan="2">
                             <asp:TextBox ID="txtFamilyGenogram"  CssClass="form-control input-sm" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </td>
-                    </tr>
-                    
-                    <tr>
+
                         <td>
                             <label>Economy status of family</label>
                         </td>
-                        <td>
+                        <td colspan="2">
                             <asp:TextBox ID="txtFamilyEconomyStatus"  CssClass="form-control input-sm" runat="server"></asp:TextBox>
                         </td>
                     </tr>
@@ -169,22 +165,20 @@
 
              
 
-                <h3>Details about the person who has contacted you on behalf of victim</h3>
+                <h3>Details about the person who has contacted you on behalf of client</h3>
                 <table id="Table2" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
                     <tr>
                         <td width="15%"><label>Name</label></td>
                         <td><asp:TextBox ID="txtNameBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Address</label></td>
+                    
+                        <td width="20%"><label>Address</label></td>
                         <td><asp:TextBox ID="txtAddressBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td><label>Phone Number</label></td>
                         <td><asp:TextBox ID="txtPhoneBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>How is the person related to victim?</label></td>
+                    
+                        <td><label>How is the person related to client?</label></td>
                         <td><asp:TextBox ID="txtRelationBehalfVictim" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
                 </table>
@@ -192,37 +186,38 @@
                  <h3>Questions related to pre-departure situation and transit</h3>
                 <table>
                     <tr>
-                        <td width="20%"><label>Reasons for FE</label></td>
+                        <td width="12%"><label>Reasons for FE</label></td>
                         <td><asp:TextBox ID="txtReasonsForFE" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>Pre-departure costs</label></td>
-                        <td><asp:TextBox ID="txtPreDepartureCosts" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                    
+                        <td width="20%"><label>Pre-departure costs</label></td>
+                        <td>
+                            <asp:DropDownList ID="ddlPredepartureCost" runat="server" CssClass="form-control input-sm">
+                            </asp:DropDownList>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
 
                     <tr>
                         <td valign="top"><label>Recruitment process</label></td>
-                        <td>
+                        <td colspan="3">
                             <table width="100%">
                                 <tr>
                                     <td width="10%">Individual:</td>
                                     <td>
                                         <asp:DropDownList ID="ddlRecruitmentProcessIndividual" runat="server" CssClass="form-control input-sm">
-                                            <asp:ListItem Value="">None</asp:ListItem>
+                                            <asp:ListItem Value="">--Select--</asp:ListItem>
                                             <asp:ListItem Value="Relative">Relative</asp:ListItem>
-                                            <asp:ListItem Value="Relative">Friend</asp:ListItem>
-                                            <asp:ListItem Value="Relative">Neighbour</asp:ListItem>
-                                            <asp:ListItem Value="Relative">Other</asp:ListItem>
+                                            <asp:ListItem Value="Friend">Friend</asp:ListItem>
+                                            <asp:ListItem Value="Neighbour">Neighbour</asp:ListItem>
+                                            <asp:ListItem Value="Other">Other</asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
-                                </tr>
-                                <tr>
+
                                     <td>Institutional: </td>
                                     <td><asp:TextBox ID="txtRecruitmentProcessInstitutional" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                                 </tr>
@@ -231,28 +226,27 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
 
                     <tr>
-                        <td><label>How is the person related to victim?</label></td>
+                        <td><label>How is the person related to client?</label></td>
                         <td><asp:TextBox ID="txtRelationNepal" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-
-                    <tr>
+                   
                         <td><label>Address Recruitment agency</label></td>
                         <td><asp:TextBox ID="txtAddressRecruitmentAgency" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td><label>Address Agent (in case of individual)</label></td>
                         <td><asp:TextBox ID="txtAddressAgent" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
+                   
+
                         <td><label>Did the person sign a contract before leaving Nepal?</label></td>
                         <td>
                             <asp:DropDownList ID="ddlSignContractOption" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="No">No</asp:ListItem>
                                     <asp:ListItem Value="One">(YES) One</asp:ListItem>
                                     <asp:ListItem Value="Two">(YES) Two</asp:ListItem>
@@ -265,9 +259,8 @@
                             Nepali - Yes:<asp:RadioButton ID="rbContractInNepaliYes" GroupName="rbContractInNepali"  runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;
                             No:<asp:RadioButton ID="rbContractInNepaliNo" GroupName="rbContractInNepali"  runat="server" />
                         </td>
-                    </tr>
+                   
 
-                    <tr>
                         <td><label>How many days before departure did the person receive the contract?</label></td>
                         <td>
                             <table width="100%">
@@ -282,20 +275,14 @@
                         <td><label>Route of travel</label></td>
                         <td>
                             <asp:DropDownList ID="ddlRouteOfTravel" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="India">India</asp:ListItem>
                                     <asp:ListItem Value="Bangladesh">Bangladesh</asp:ListItem>
                                     <asp:ListItem Value="TIA">TIA</asp:ListItem>
                                 <asp:ListItem Value="Other">Other</asp:ListItem>
                                 </asp:DropDownList>
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="liner">&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr>
+                   
                         <td><label>Status at departure</label></td>
                         <td>
                             Documented:<asp:RadioButton ID="rbStatusAtDepartureDocumented" GroupName="rbStatusAtDeparture" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -303,13 +290,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
                     <tr>
                         <td valign=""><label>Problems faced during transit</label></td>
-                        <td>
+                        <td colspan="3">
                             <table width="100%">
                                 <tr>
                                     <td width="20%">Long waiting time:<asp:RadioButton ID="rbProblemTransitLongWaiting" GroupName="rbProblemTransit" runat="server" /> (how long)</td>
@@ -331,7 +318,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
@@ -341,36 +328,42 @@
                 <h3>Questions related to status in destination country</h3>
                 <table id="Table3" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
                     <tr>
-                        <td width="30%" ><label>Country of destination</label></td>
-                        <td>
+                        <td width="25%"><label>Country of destination</label></td>
+                        <td width="25%">
                             <asp:DropDownList ID="ddlDestinationCountry" runat="server" CssClass="form-control input-sm"></asp:DropDownList>
                         </td>
+                   
+                        <td width="25%"><label>When did the client arrive in the destination country?</label></td>
+                        <td width="25%"><asp:TextBox ID="txtArrivedInDestinationCountry" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td><label>When did the victim arrive in the destination country?</label></td>
-                        <td><asp:TextBox ID="txtArrivedInDestinationCountry" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td><label>How long did the victim stay in the country?</label> </td>
-                        <td><asp:TextBox ID="txtCountryStayDuration" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                    <tr>
+                        <td><label>How long did the client stay in the country?</label> </td>
+                        <td>
+                            <asp:DropDownList ID="ddlCountryStayDuration" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
+                                <asp:ListItem Value="Less than 6 months">Less than 6 months</asp:ListItem>
+                                <asp:ListItem Value="6 months to 1 year">6 months to 1 year</asp:ListItem>
+                                <asp:ListItem Value="1 year to 2 years">1 year to 2 years</asp:ListItem>
+                                <asp:ListItem Value="2 years to 3 years">2 years to 3 years</asp:ListItem>
+                                <asp:ListItem Value="Above 3 years">Above 3 years</asp:ListItem>
+                            </asp:DropDownList></td>
+                   
                         <td><label>Employer details (name, address)</label> </td>
                         <td><asp:TextBox ID="txtEmployerDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
                     <tr>
                         <td valign="top"><label>When did the person arrive in Nepal/is the person still in the country</label></td>
-                        <td>
+                        <td colspan="3">
                             <table width="100%">
                                 <tr>
                                     <td width="18%">Date of arrival in Nepal</td>
-                                    <td><asp:TextBox ID="txtDateOfArrivalNepal" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td><asp:TextBox ID="txtDateOfArrivalNepal" runat="server" CssClass="form-control input-sm date_input"></asp:TextBox></td>
                                 </tr>
                                 <tr>
                                     <td>Still in the country</td>
@@ -381,31 +374,42 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td colspan="4">
                             <div class="liner">&nbsp;</div>
                         </td>
                     </tr>
 
                     <tr>
-                        <td><label>Status in the country of destination before return</label></td>
-                        <td>
+                        <td colspan="4"><label>Status in the country of destination before return</label>
+                            &nbsp;&nbsp;
                             Documented:<asp:RadioButton ID="rbDestinationStatusBeforeReturnDocumented" GroupName="rbDestinationStatusBeforeReturn" runat="server" />&nbsp; 
                             &nbsp; &nbsp; &nbsp; &nbsp; 
                             Undocumented:<asp:RadioButton ID="rbDestinationStatusBeforeReturnUndocumented" GroupName="rbDestinationStatusBeforeReturn"  runat="server" />&nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td><label>Status in the country of destination before return</label></td>
-                        <td>
+                        <td colspan="4"><label>Status in the country of destination before return</label>
+                            &nbsp;&nbsp;
                             Had Passport with her:<asp:RadioButton ID="rbStatusHadPassportYes" GroupName="rbStatusHadPassport" runat="server" />&nbsp; 
                             &nbsp; &nbsp; &nbsp; &nbsp; 
-                            Did not had passport but had returned back with  travel document issued by embassy:<asp:RadioButton ID="rbStatusHadPassportNo" GroupName="rbStatusHadPassport"  runat="server" />&nbsp;
+                            Travel document issued by embassy:<asp:RadioButton ID="rbStatusHadPassportNo" GroupName="rbStatusHadPassport"  runat="server" />&nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; 
+                            Both:<asp:RadioButton ID="rbStatusHadPassportBoth" GroupName="rbStatusHadPassport"  runat="server" />&nbsp;
                         </td>
                     </tr>
 
                     <tr>
-                        <td><label>How many years in total did the person spend in FE (including previous contracts)</label> </td>
-                        <td><asp:TextBox ID="txtTotalYearsSpent" runat="server" CssClass="form-control input-sm" ></asp:TextBox></td>
+                        <td colspan="2"><label>How many years in total did the person spend in FE (including previous contracts)</label> </td>
+                        <td><asp:DropDownList ID="ddlTotalYearsSpent" runat="server" CssClass="form-control input-sm">
+                            <asp:ListItem Value="">--Select--</asp:ListItem>
+                                <asp:ListItem Value="Less than 6 months">Less than 6 months</asp:ListItem>
+                                <asp:ListItem Value="6 months to 1 year">6 months to 1 year</asp:ListItem>
+                                <asp:ListItem Value="1 year to 2 years">1 year to 2 years</asp:ListItem>
+                                <asp:ListItem Value="2 years to 3 years">2 years to 3 years</asp:ListItem>
+                                <asp:ListItem Value="Above 3 years">Above 3 years</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                        <td></td>
                     </tr>
 
                 </table>
@@ -416,6 +420,7 @@
                         <td width="25%"><label>Did the person sign another contract in the destination country?</label></td>
                         <td>
                             <asp:DropDownList ID="ddlSignedContractDest" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="">NO</asp:ListItem>
                                     <asp:ListItem Value="One">(YES) One</asp:ListItem>
                                     <asp:ListItem Value="Two">(YES) Two</asp:ListItem>
@@ -498,20 +503,10 @@
                     <tr>
                         <td><label>Does the person have a contract copy?</label></td>
                         <td>
-                            <table width="100%">
-                                <tr>
-                                    <td colspan="3">No: <asp:RadioButton ID="rbHaveContractCopyNo" GroupName="rbHaveContractCopy"  runat="server" /></td>
-                                </tr>
-                                <tr>
-                                    <td width="8%">Yes: <asp:RadioButton ID="rbHaveContractCopyYes" GroupName="rbHaveContractCopy"  runat="server" /></td>
-                                    <td width="17%">Copy of contract details:</td>
-                                    <td>
-                                        <asp:TextBox ID="txtCopyOfContractDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox>
+                            Yes: <asp:RadioButton ID="rbHaveContractCopyYes" GroupName="rbHaveContractCopy"  runat="server" />&nbsp;&nbsp;
+                            No: <asp:RadioButton ID="rbHaveContractCopyNo" GroupName="rbHaveContractCopy"  runat="server" />
+                            
 
-                                    </td>
-                                </tr>
-                            </table>
-                            <br />
                         </td>
                     </tr>
                     <tr>
@@ -521,10 +516,6 @@
                     </tr>
 
 
-                    <tr>
-                        <td><label>How many days before departure did the person receive the contract?</label></td>
-                        <td><asp:TextBox ID="txtDaysBeforeDepartureReceivedContract" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
 
                     <tr>
                         <td><label>Job difference:Was the job in the destination different from what was promised in Nepal?</label></td>
@@ -589,7 +580,7 @@
                     </tr>
 
                     <tr>
-                        <td><label>What did the victim do when the salary was not paid? 
+                        <td><label>What did the client do when the salary was not paid? 
 How did the employer react?
 </label></td>
                         <td><asp:TextBox ID="txtSalaryNotPaidDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
@@ -604,6 +595,7 @@ How did the employer react?
                         <td><label>Time off:Did the person get off time? </label></td>
                         <td>
                                 <asp:DropDownList ID="ddlTimeOffOption" runat="server" CssClass="form-control input-sm">
+                                    <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="Once day a week">Once day a week</asp:ListItem>
                                     <asp:ListItem Value="Occasionally">Occasionally</asp:ListItem>
                                     <asp:ListItem Value="Never">Never</asp:ListItem>
@@ -648,21 +640,6 @@ How did the employer react?
                         <td><asp:TextBox ID="txtEmployerReact" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>
 
-                    <tr>
-                        <td colspan="2"><h4><label>Dismissal</label></h4></td>
-                    </tr>
-                    <tr>
-                        <td><label>When did the employer dismiss the person?</label></td>
-                        <td><asp:TextBox ID="txtPersonDismissalWhen" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
-                    </tr>
-                     <tr>
-                        <td><label>What was the reason given?</label></td>
-                        <td><asp:TextBox ID="txtDismissalGivenReason" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
-                     <tr>
-                        <td><label>How did the employer dismiss the person? Circumstances of the dismissal</label></td>
-                        <td><asp:TextBox ID="txtDismisallCircumstances" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
-                    </tr>
 
                     <tr>
                         <td><label>Physical abuse:Did the person suffer from physical abuse? If yes, pls describe</label></td>
@@ -681,10 +658,11 @@ How did the employer react?
                                 <tr>
                                     <td colspan="2">
                                         <asp:DropDownList ID="ddlEmotionalAbuse" runat="server" CssClass="form-control input-sm">
-                                            <asp:ListItem Value="">None</asp:ListItem>
-                                            <asp:ListItem Value="">Shouting</asp:ListItem>
-                                            <asp:ListItem Value="One">Humiliating talk</asp:ListItem>
-                                            <asp:ListItem Value="Two">Other</asp:ListItem>
+                                            <asp:ListItem Value="">--Select--</asp:ListItem>
+                                            <asp:ListItem Value="No">No</asp:ListItem>
+                                            <asp:ListItem Value="Shouting">YES - Shouting</asp:ListItem>
+                                            <asp:ListItem Value="Humiliating talk">YES - Humiliating talk</asp:ListItem>
+                                            <asp:ListItem Value="Other">YES - Other</asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -704,7 +682,24 @@ How did the employer react?
 
                     <tr>
                         <td><label>Sexual abuse: did the person suffer from sexual abuse. </label></td>
-                        <td><asp:TextBox ID="txtSexualAbuse" runat="server" CssClass="form-control input-sm" TextMode="MultiLine" placeholder="pls describe....  Perpetrator: Name and relation to the employer"></asp:TextBox></td>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <asp:DropDownList ID="ddlSexualAbuseOption" runat="server" CssClass="form-control input-sm">
+                                            <asp:ListItem Value="">--Select--</asp:ListItem>
+                                            <asp:ListItem Value="No">No</asp:ListItem>
+                                            <asp:ListItem Value="Seducing">YES - Seducing</asp:ListItem>
+                                            <asp:ListItem Value="Molestation">YES - Molestation</asp:ListItem>
+                                            <asp:ListItem Value="Attempt to rape">YES - Attempt to rape</asp:ListItem>
+                                            <asp:ListItem Value="Rape">YES - Rape</asp:ListItem>
+                                        </asp:DropDownList> 
+                                    </td>
+                                    <td>If yes, By Whom?</td>
+                                    <td><asp:TextBox ID="txtSexualAbuse" runat="server" CssClass="form-control input-sm" TextMode="MultiLine" placeholder="Perpetrator: Name and relation to the employer"></asp:TextBox></td>
+                                </tr>
+                            </table>
+                         </td>
                     </tr>
                 </table>
 
@@ -720,6 +715,7 @@ How did the employer react?
                                     <td width="10%">Contacted</td>
                                     <td>
                                         <asp:DropDownList ID="ddlContactedOrganization" runat="server" CssClass="form-control input-sm">
+                                            <asp:ListItem Value="">--Select--</asp:ListItem>
                                             <asp:ListItem Value="None">None</asp:ListItem>
                                             <asp:ListItem Value="Embassy">Embassy</asp:ListItem>
                                             <asp:ListItem Value="Recruitment agency ">Recruitment agency </asp:ListItem>
@@ -735,7 +731,7 @@ How did the employer react?
                         </td>
                     </tr>
                     <tr>
-                        <td><label>Pls describe how the service by other institutions contacted was perceived by the victim</label></td>
+                        <td><label>Pls describe how the service by other institutions contacted was perceived by the client</label></td>
                         <td>
                             <asp:TextBox ID="txtServiceByOtherInstitutionsDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox>
                         </td>
@@ -745,12 +741,31 @@ How did the employer react?
                 <h3>Services by Pourakhi</h3>
                 <table id="Table5" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
                     <tr>
-                        <td width="25%"><label>Date when case was received</label></td>
-                        <td><asp:TextBox ID="txtCaseReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                        <td width="25%"><label>Date when client arrived</label></td>
+                        <td><asp:TextBox ID="txtCaseReceivedDate" runat="server" CssClass="form-control input-sm date_input"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td><label>From where was case referred</label> </td>
-                        <td><asp:TextBox ID="txtWhereCaseReferred" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <asp:DropDownList ID="ddlWhereCaseReferred" runat="server" CssClass="form-control input-sm">
+                                            <asp:ListItem Value="">--Select--</asp:ListItem>
+                                            <asp:ListItem Value="TIA"></asp:ListItem>
+                                            <asp:ListItem Value="Government"></asp:ListItem>
+                                            <asp:ListItem Value="Civil Society"></asp:ListItem>
+                                            <asp:ListItem Value="Others"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </td>
+                                    <td>If Other, please specify:</td>
+                                    <td><asp:TextBox ID="txtWhereCaseReferredOther" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            </td>
                     </tr>
                     <tr>
                         <td><label>Shelter: Days of stay at the shelter</label> </td>
@@ -761,16 +776,42 @@ How did the employer react?
                         <td colspan="2"><h4><label>Psychosocial support</label></h4></td>
                     </tr>
                     <tr>
-                        <td><label>What was the psychosocial situation of the victim?</label> </td>
+                        <td><label>What was the psychosocial situation of the client?</label> </td>
                         <td><asp:TextBox ID="txtPsychosocialSitutaionOfVictim" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td><label>What service did Pourakhi provide? Who provided what service?</label> </td>
-                        <td><asp:TextBox ID="txtPourakhiServiceDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine" 
-                            placeholder="Name of counselor
-                            How many sessions?
-                            What was done/discussed?
-                            "></asp:TextBox></td>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td>Name of counselor?</td>
+                                    <td> <asp:TextBox ID="txtPSNameOfCounselor" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td>How many sessions?</td>
+                                    <td> <asp:TextBox ID="txtPSHowManySessions" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td>What was done/discussed?</td>
+                                    <td> <asp:TextBox ID="txtPSWhatWasDoneDiscussed" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                                    <td>Additional service provided</td>
+                                    <td>
+                                         <asp:DropDownList ID="ddlPSAdditionalServiceProvided" runat="server" CssClass="form-control input-sm">
+                                             <asp:ListItem Value="">--Select--</asp:ListItem>
+                                             <asp:ListItem Value="Psychosocial couseling">Psychosocial counseling</asp:ListItem>
+                                             <asp:ListItem Value="Transportation to client">Transportation to client</asp:ListItem>
+                                             <asp:ListItem Value="Transportation to family">Transportation to family</asp:ListItem>
+                                             <asp:ListItem Value="Medical treatment: mental">Medical treatment: mental</asp:ListItem>
+                                             <asp:ListItem Value="Medical treatment: physical">Medical treatment: physical</asp:ListItem>
+                                             <asp:ListItem Value="Medical treatment: delivery">Medical treatment: delivery</asp:ListItem>
+                                             <asp:ListItem Value="Medical treatment: abortion">Medical treatment: abortion</asp:ListItem>
+                                             <asp:ListItem Value="Refer to long term shelter">Refer to long term shelter</asp:ListItem>
+                                             <asp:ListItem Value="Other">Other</asp:ListItem>
+                                         </asp:DropDownList>
+                                        If Other:
+                                        <asp:TextBox ID="txtPSAdditionalServiceProvidedOther" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
 
                     <tr>
@@ -996,4 +1037,19 @@ How did the employer react?
                 </table>
             </div>
         </div>
+
+    <script type="text/javascript">
+
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm.add_beginRequest(BeginRequestHandler);
+        prm.add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+            $('.date_input').datepicker({ dateFormat: 'dd/mm/y', changeYear: true, changeMonth: true });
+        }
+
+        function EndRequestHandler(sender, args) {
+            $('.date_input').datepicker({ dateFormat: 'dd/mm/y', changeYear: true, changeMonth: true });
+        }
+    </script>
 </asp:Content>

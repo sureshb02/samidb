@@ -19,7 +19,20 @@
                          
                         <li><a href="/FLAC/Index.aspx"">Case Profile</a></li>
                         
-                          
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Reports <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/FLAC/Reports/SummaryReport.aspx">Summary Report (PNCC)</a></li>
+                                <li><a href="/FLAC/Reports/CasteDisagregationReport.aspx">Caste Disaggregation Report (PNCC)</a></li>
+                                <li><a href="/FLAC/Reports/CaseNatureReport.aspx">Nature of cases Report (PNCC)</a></li>
+                                <li><a href="/FLAC/Reports/LegalStatusMigrantsReport.aspx">Legal status of migrants (PNCC)</a></li>
+                                <li><a href="/FLAC/Reports/Pourakhi/CasteDisagregationReport.aspx">Caste Disaggregation Report (Pourakhi)</a></li>
+                                <li><a href="/FLAC/Reports/Pourakhi/SummaryReport1.aspx">Women Clients & Legal Status Report (Pourakhi)</a></li>
+                                <li><a href="/FLAC/Reports/Pourakhi/SummaryReport2.aspx">Documents in Possesion & Route Of Departure Report (Pourakhi)</a></li>
+                                <li><a href="/FLAC/Reports/Pourakhi/SummaryReport3.aspx">Education, Age and Marital Status Report (Pourakhi)</a></li>
+                                <li><a href="/FLAC/Reports/Pourakhi/SummaryReport4.aspx">Foreign Employment Duration, Predeparture Cost and Recruitment Process (Pourakhi)</a></li>
+                            </ul>
+                        </li>
                         </ul>
                         
                         <ul class="nav navbar-nav navbar-right">

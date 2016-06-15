@@ -53,6 +53,24 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlPartner" runat="server" CssClass="form-control input-sm" Enabled = "false"></asp:DropDownList>
+                    <br />
+                                <asp:Panel ID="pnlCaseTemplates" runat="server">
+                                    Give access to:
+                                    <table width="100%">
+                                        <tr>
+                                            <td><asp:CheckBox ID="chkContractIssue" runat="server" Text="Contract Issue" /></td>
+                                            <td><asp:CheckBox ID="chkDeath" runat="server" Text="Death Cases" /></td>
+                                            <td><asp:CheckBox ID="chkJail" runat="server" Text="Deportation/Jail" /></td>
+                                            <td><asp:CheckBox ID="chkHealthNSaftey" runat="server" Text="Health and Saftey" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><asp:CheckBox ID="chkOutOfContact" runat="server" Text="Out Of Contact" /></td>
+                                            <td><asp:CheckBox ID="chkShelterWithProblem" runat="server" Text="Shelter with problems (Pourakhi)" /></td>
+                                            <td colspan="2"><asp:CheckBox ID="chkFLAPS" runat="server" Text="Free Legal and Paralegal Service (PF)" /></td>
+                                        </tr>
+                                    </table>
+                                    
+                                </asp:Panel>
                 </td>
             </tr>
 
@@ -118,6 +136,13 @@
         </div>
     </div>
 </div>
+
+    <script>
+        $('#ctl00_MainContent_pnlCaseTemplates').hide();
+        if ($('#ctl00_MainContent_ddlUserType option:selected').text() == 'Case Partner') {
+            $('#ctl00_MainContent_pnlCaseTemplates').show();
+        }
+    </script>
 </asp:Content>
 
 

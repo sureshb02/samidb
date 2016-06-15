@@ -1,5 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="SaMI.Web.FLAC.ShelterWithoutProblems.Edit" %>
+﻿<%@ Page Title="Add Shelter Withour Problems" Language="C#" MasterPageFile="~/CaseMaster.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="SaMI.Web.FLAC.ShelterWithoutProblems.Edit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.date_input').datepicker({ dateFormat: 'dd/mm/y', changeYear: true, changeMonth: true });
+        });
+    </script>
 </asp:Content>
 
 
@@ -12,7 +17,7 @@
                 <asp:UpdatePanel ID="UpdatePanelAdd" runat="server">
                 <ContentTemplate>
 
-                <h3>Detail about victim</h3>
+                <h3>Detail about client</h3>
                 <table id="personalDetails"width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
                     <tr>
                         <td width="15%"><label>Family Name</label></td>
@@ -58,9 +63,10 @@
                         </td>
                     </tr>
                      <tr>
-                        <td><label>Sex of victim</label></td>
+                        <td><label>Sex of client</label></td>
                         <td>
-                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control input-sm">
+                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control input-sm" required="required">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                 <asp:ListItem Value="M">Male</asp:ListItem>
                                 <asp:ListItem Value="F">Female</asp:ListItem>
                                 <asp:ListItem Value="O">Other</asp:ListItem>
@@ -70,7 +76,7 @@
                     <tr>
                         <td><label>Date of Birth</label></td>
                         <td>
-                            <asp:TextBox ID="txtDateOfBirth" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                            <asp:TextBox ID="txtDateOfBirth" runat="server" CssClass="form-control input-sm date_input"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -123,7 +129,8 @@
                     <tr>
                         <td><label>Education Status</label></td>
                         <td>
-                            <asp:DropDownList ID="ddlEducationStatus" runat="server" CssClass="form-control input-sm">
+                            <asp:DropDownList ID="ddlEducationStatus" runat="server" CssClass="form-control input-sm" required="required">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                 <asp:ListItem Value="Illitrate">Illitrate</asp:ListItem>
                                 <asp:ListItem Value="Litrate">Litrate</asp:ListItem>
                                 <asp:ListItem Value="Primary">Primary</asp:ListItem>
@@ -185,6 +192,7 @@
                                     <td width="10%">Individual:</td>
                                     <td>
                                         <asp:DropDownList ID="ddlRecruitmentProcessIndividual" runat="server" CssClass="form-control input-sm">
+                                            <asp:ListItem Value="">--Select--</asp:ListItem>
                                             <asp:ListItem Value="">None</asp:ListItem>
                                             <asp:ListItem Value="Relative">Relative</asp:ListItem>
                                             <asp:ListItem Value="Relative">Friend</asp:ListItem>
@@ -211,6 +219,7 @@
                         <td><label>Did the person sign a contract before leaving Nepal?</label></td>
                         <td>
                             <asp:DropDownList ID="ddlSignContractOption" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="No">No</asp:ListItem>
                                     <asp:ListItem Value="One">(YES) One</asp:ListItem>
                                     <asp:ListItem Value="Two">(YES) Two</asp:ListItem>
@@ -240,6 +249,7 @@
                         <td><label>Route of travel</label></td>
                         <td>
                             <asp:DropDownList ID="ddlRouteOfTravel" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="India">India</asp:ListItem>
                                     <asp:ListItem Value="Bangladesh">Bangladesh</asp:ListItem>
                                     <asp:ListItem Value="TIA">TIA</asp:ListItem>
@@ -303,6 +313,7 @@
                         <td width="25%"><label>Did the person sign another contract in the destination country?</label></td>
                         <td>
                             <asp:DropDownList ID="ddlSignedContractDest" runat="server" CssClass="form-control input-sm">
+                                <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="">NO</asp:ListItem>
                                     <asp:ListItem Value="One">(YES) One</asp:ListItem>
                                     <asp:ListItem Value="Two">(YES) Two</asp:ListItem>
@@ -477,7 +488,7 @@
 
                     <tr>
                         <td>
-                            <label>What did the victim do when the salary was not paid? How did the employer react?</label>
+                            <label>What did the client do when the salary was not paid? How did the employer react?</label>
                         </td>
                         <td><asp:TextBox ID="txtSalaryNotPaidDetails" runat="server" CssClass="form-control input-sm" TextMode="MultiLine"></asp:TextBox></td>
                     </tr>
@@ -491,6 +502,7 @@
                         <td><label>Time off:Did the person get off time? </label></td>
                         <td>
                                 <asp:DropDownList ID="ddlTimeOffOption" runat="server" CssClass="form-control input-sm">
+                                    <asp:ListItem Value="">--Select--</asp:ListItem>
                                     <asp:ListItem Value="Once day a week">Once day a week</asp:ListItem>
                                     <asp:ListItem Value="Occasionally">Occasionally</asp:ListItem>
                                     <asp:ListItem Value="Never">Never</asp:ListItem>
@@ -540,7 +552,7 @@
                 <table id="Table5" width="100%" cellpadding="5" cellspacing="0" border="0" class="table-tab">
                     <tr>
                         <td width="25%"><label>Date when case was received</label></td>
-                        <td><asp:TextBox ID="txtCaseReceivedDate" runat="server" CssClass="form-control input-sm"></asp:TextBox></td>
+                        <td><asp:TextBox ID="txtCaseReceivedDate" runat="server" CssClass="form-control input-sm date_input"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td><label>From where was case referred</label> </td>
@@ -567,9 +579,26 @@
             </div>
         </div>
 
+    
+
     <asp:HiddenField ID="hfFLACShelterProfileID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterQRelatedPreDepartureID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterQRelatedDestinationID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterQRelatedExpDestinationID" runat="server" Value="" />
     <asp:HiddenField ID="hfFLACShelterPourakhiServiceID" runat="server" Value="" />
+
+    <script type="text/javascript">
+
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm.add_beginRequest(BeginRequestHandler);
+        prm.add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+            $('.date_input').datepicker({ dateFormat: 'dd/mm/y', changeYear: true, changeMonth: true });
+        }
+
+        function EndRequestHandler(sender, args) {
+            $('.date_input').datepicker({ dateFormat: 'dd/mm/y', changeYear: true, changeMonth: true });
+        }
+    </script>
 </asp:Content>
